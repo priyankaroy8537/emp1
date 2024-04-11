@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Employee Management</h2>
+  
+  <!-- Navigation buttons -->
+  <div class="navigation">
+    <button onclick="showAddForm()">Add Employee</button>
+    <button onclick="showUpdateForm()">Update Employee</button>
+    <button onclick="showDeleteForm()">Delete Employee</button>
+    <button onclick="showViewForm()">View Employee</button>
+    <button onclick="displayAll()">Display All</button>
+  </div>
+  
+  <!-- Form for adding new employee -->
+  <form id="addForm" class="hidden">
+    <label for="userId">User ID:</label>
+    <input type="text" id="userId" name="userId" required>
+    <label for="userName">Username:</label>
+    <input type="text" id="userName" name="userName" required>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required>
+    <button type="button" onclick="saveEmployee()">Save</button>
+  </form>
+
+  <!-- Form for updating employee -->
+  <div id="updateSection" class="hidden">
+    <h3>Update Employee</h3>
+    <form id="updateForm">
+      <label for="updateUserId">User ID:</label>
+      <input type="text" id="updateUserId" name="updateUserId" required>
+      <label for="updateUserName">Username:</label>
+      <input type="text" id="updateUserName" name="updateUserName" required>
+      <label for="updateCity">City:</label>
+      <input type="text" id="updateCity" name="updateCity" required>
+      <button type="button" onclick="updateEmployee()">Update</button>
+    </form>
+  </div>
+
+  <!-- Form for deleting employee -->
+  <form id="deleteForm" class="hidden">
+    <label for="deleteUserId">User ID:</label>
+    <input type="text" id="deleteUserId" name="deleteUserId" required>
+    <button type="button" onclick="deleteEmployee()">Delete</button>
+  </form>
+  
+  <!-- Form for viewing employee -->
+  <form id="viewForm" class="hidden">
+    <label for="viewUserId">User ID:</label>
+    <input type="text" id="viewUserId" name="viewUserId" required>
+    <button type="button" onclick="viewEmployee()">View</button>
+  </form>
+  
+  <!-- Table to display employees -->
+  <table id="employeeTable" class="hidden">
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Username</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody id="employeeList">
+      <!-- Employee data will be dynamically added here -->
+    </tbody>
+  </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
